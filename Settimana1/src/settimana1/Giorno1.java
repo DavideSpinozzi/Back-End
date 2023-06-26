@@ -11,7 +11,7 @@ public class Giorno1 {
 		int counter = 0;
 		while (counter != 8) {
 			System.out.println();
-			System.out.println();
+			System.out.println("-------------------------------------------------------------------------");
 			System.out.println("Inserisci l' operazione da effetuare");
 			System.out.println("1 : Moltiplicazione");
 			System.out.println("2 : Concatenazione");
@@ -21,7 +21,7 @@ public class Giorno1 {
 			System.out.println("6 : Pari e Dispari");
 			System.out.println("7 : Area Triangolo");
 			System.out.println("8 : Esci");
-			System.out.println();
+			System.out.println("-------------------------------------------------------------------------");
 			counter = scanner.nextInt();
 			switch (counter) {
 

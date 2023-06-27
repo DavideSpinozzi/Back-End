@@ -70,6 +70,7 @@ public class Main {
 			case 5:
 				stampaCarrello(carrello);
 				System.out.println("Grazie per l' acquisto");
+				scanner.close();
 				break;
 			}
 		}

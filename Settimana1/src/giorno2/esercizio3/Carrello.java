@@ -47,14 +47,14 @@ public class Carrello {
 	public void aggiungiArticolo(Articolo articolo) {
 		
 		
-		Articolo[] elencoArticoli = new Articolo[this.elencoArticoli.length + 1];
+		Articolo[] elencoArticoliNuovo = new Articolo[this.elencoArticoli.length + 1];
 		
 		for( int i=0 ; i<this.elencoArticoli.length; i++) {
 			
-			elencoArticoli[i]= this.elencoArticoli[i];
+			elencoArticoliNuovo[i]= this.elencoArticoli[i];
 		}
-		elencoArticoli[elencoArticoli.length -1]= articolo;
-		this.elencoArticoli = elencoArticoli;
+		elencoArticoliNuovo[elencoArticoliNuovo.length -1]= articolo;
+		this.elencoArticoli = elencoArticoliNuovo;
 	}
 	
 }

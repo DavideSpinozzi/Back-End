@@ -14,12 +14,12 @@ package esercizio3;
 	            e.printStackTrace();
 	        }
 
-	        ContoOnLine conto2 = new ContoOnLine("Aldo Ok", 700000, 1500);
+	        ContoOnLine conto2 = new ContoOnLine("Aldo Ok", 7000, 15000);
 
 	        conto2.stampaSaldo();
 
 	        try {
-	            conto2.preleva(2000);
+	            conto2.preleva(8000);
 	            conto2.stampaSaldo();
 	        } catch (BancaException e) {
 	            System.out.println("Errore durante il prelievo: " + e);

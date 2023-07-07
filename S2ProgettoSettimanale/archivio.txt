@@ -1,0 +1,3 @@
+progetto.classi.Libro,ISBN2,Titolo libro 2,2022,250,Autore 2,Genere 2
+progetto.classi.Rivista,ISBN3,Titolo rivista 1,2023,100
+progetto.classi.Rivista,ISBN4,Titolo rivista 2,2023,50

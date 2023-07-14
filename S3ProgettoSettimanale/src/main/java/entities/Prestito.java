@@ -31,4 +31,8 @@ public class Prestito {
         this.dataRestituzionePrevista = dataInizioPrestito.plusDays(30);
         this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
+    @Override
+    public String toString() {
+        return "Prestito: id=" + getId() + ", utente=" + getUtente() + ", elementoPrestato=" + getElementoPrestato() + ", dataInizioPrestito=" + getDataInizioPrestito() + ", dataRestituzionePrevista=" + getDataRestituzionePrevista() + ", dataRestituzioneEffettiva=" + getDataRestituzioneEffettiva();
+    }
 }

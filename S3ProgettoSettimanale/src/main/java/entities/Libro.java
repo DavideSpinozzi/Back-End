@@ -18,4 +18,8 @@ public class Libro extends Readablex {
         this.autore = autore;
         this.genere = genere;
     }
+    @Override
+    public String toString() {
+        return "Libro: isbn=" + getIsbn() + ", titolo=" + getTitolo() + ", autore=" + getAutore() + ", genere=" + getGenere();
+    }
 }

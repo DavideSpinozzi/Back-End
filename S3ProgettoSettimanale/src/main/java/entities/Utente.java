@@ -28,4 +28,8 @@ public class Utente {
         this.cognome = cognome;
         this.dataNascita = dataNascita;
     }
+    @Override
+    public String toString() {
+        return "Utente: numeroTessera=" + getNumeroTessera() + ", nome=" + getNome() + ", cognome=" + getCognome() + ", dataNascita=" + getDataNascita();
+    }
 }

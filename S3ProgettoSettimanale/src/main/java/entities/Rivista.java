@@ -22,4 +22,8 @@ public class Rivista extends Readablex {
         super(titolo, annoPubblicazione, numeroPagine);
         this.periodicita = periodicita;
     }
+    @Override
+    public String toString() {
+        return "Rivista: isbn=" + getIsbn() + ", titolo=" + getTitolo() + ", periodicita=" + getPeriodicita();
+    }
 }

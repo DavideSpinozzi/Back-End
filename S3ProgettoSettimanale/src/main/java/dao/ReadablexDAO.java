@@ -38,6 +38,7 @@ public class ReadablexDAO {
 	            em.remove(readablex);
 	        }
 	        transaction.commit();
+	        System.out.println("Elemento cancellato con successo");
 	    } catch (Exception e) {
 	        transaction.rollback();
 	        throw e;

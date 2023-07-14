@@ -24,7 +24,6 @@ public class Archivio {
         EntityManager em = emf.createEntityManager();
 
         try {
-            
             UtenteDAO utenteDAO = new UtenteDAO(em);
             PrestitoDAO prestitoDAO = new PrestitoDAO(em);
             ReadablexDAO readablexDAO = new ReadablexDAO(em);
@@ -42,15 +41,14 @@ public class Archivio {
             Utente utente = new Utente("Davide", "Spinozzi", LocalDate.of(2001, 2, 5));
             utenteDAO.aggiungiUtente(utente);
 
-            Readablex elementoPrestato = libro1; 
-            LocalDate dataInizioPrestito = LocalDate.of(2010, 2, 5); 
-            LocalDate dataRestituzioneEffettiva = null; 
+            Readablex elementoPrestato = libro1;
+            LocalDate dataInizioPrestito = LocalDate.of(2010, 2, 5);
+            LocalDate dataRestituzioneEffettiva = null;
 
             Prestito prestito = new Prestito(utente, elementoPrestato, dataInizioPrestito, dataRestituzioneEffettiva);
             prestitoDAO.aggiungiPrestito(prestito);
-         
+
             List<Prestito> prestitiUtente = utenteDAO.ricercaPrestitiUtente(utente.getNumeroTessera());
-        
             List<Prestito> prestitiScadutiNonRestituiti = prestitoDAO.ricercaPrestitiScadutiNonRestituiti();
 
             System.out.println("Prestiti dell'utente:");
@@ -63,6 +61,28 @@ public class Archivio {
                 System.out.println(prestitoScadutoNonRestituito);
             }
 
+            int annoPubblicazione = 2023;
+            List<Readablex> risultatoRicercaAnno = readablexDAO.ricercaPerAnnoPubblicazione(annoPubblicazione);
+            System.out.println("Risultato ricerca per anno di pubblicazione (" + annoPubblicazione + "):");
+            for (Readablex readablex : risultatoRicercaAnno) {
+                System.out.println(readablex);
+            }
+
+            String autore = "JKR";
+            List<Readablex> risultatoRicercaAutore = readablexDAO.ricercaPerAutore(autore);
+            System.out.println("Risultato ricerca per autore (" + autore + "):");
+            for (Readablex readablex : risultatoRicercaAutore) {
+                System.out.println(readablex);
+            }
+
+            String titolo = "Harry Potter";
+            List<Readablex> risultatoRicercaTitolo = readablexDAO.ricercaPerTitolo(titolo);
+            System.out.println("Risultato ricerca per titolo (" + titolo + "):");
+            for (Readablex readablex : risultatoRicercaTitolo) {
+                System.out.println(readablex);
+            }
+            
+            readablexDAO.rimuoviElementoCatalogo(16l);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -9,7 +9,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public abstract class Readablex {
+public class Readablex {
     @Id
     @GeneratedValue
     private Long isbn;

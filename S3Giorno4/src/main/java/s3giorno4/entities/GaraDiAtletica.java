@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@NamedQuery(name = "GaraDiAtletica.getGareDiAtleticaPerVincitore", query = "SELECT g FROM GaraDiAtletica g WHERE g.vincitore = :vincitore")
+@NamedQuery(name = "GaraDiAtletica.getGareDiAtleticaPerPartecipante", query = "SELECT g FROM GaraDiAtletica g JOIN g.partecipazioni p WHERE p.persona = :partecipante")
 public class GaraDiAtletica extends Evento {
     @OneToMany(mappedBy = "evento", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Partecipazione> partecipazioni;

@@ -1,8 +1,12 @@
 package s3giorno4.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
+import s3giorno4.entities.Evento;
 import s3giorno4.entities.Partecipazione;
 
 public class PartecipazioneDAO {
@@ -42,5 +46,11 @@ public class PartecipazioneDAO {
         em.refresh(partecipazione);
 
         transaction.commit();
+    }
+    
+    public List<Partecipazione> getPartecipazioniDaConfermarePerEvento(Evento evento) {
+        TypedQuery<Partecipazione> query = em.createNamedQuery("Partecipazione.getPartecipazioniDaConfermarePerEvento", Partecipazione.class);
+        query.setParameter("evento", evento);
+        return query.getResultList();
     }
 }

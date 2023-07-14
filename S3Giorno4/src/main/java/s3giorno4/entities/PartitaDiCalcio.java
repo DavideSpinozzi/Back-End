@@ -3,6 +3,9 @@ package s3giorno4.entities;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+
+import org.hibernate.annotations.NamedQuery;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +14,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@NamedQuery(name = "PartitaDiCalcio.getPartiteVinteInCasa", query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente = p.squadraDiCasa")
+@NamedQuery(name = "PartitaDiCalcio.getPartiteVinteInTrasferta", query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente <> p.squadraDiCasa")
+@NamedQuery(name = "PartitaDiCalcio.getPartitePareggiate", query = "SELECT p FROM PartitaDiCalcio p WHERE p.numeroGolSquadraDiCasa = p.numeroGolSquadraOspite")
+
 public class PartitaDiCalcio extends Evento {
     private String squadraDiCasa;
     private String squadraOspite;

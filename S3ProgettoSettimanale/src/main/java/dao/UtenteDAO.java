@@ -26,6 +26,10 @@ public class UtenteDAO {
             throw e;
         }
     }
+    
+    public Utente ricercaUtenteDaNumeroTessera(Long numeroTessera) {
+        return em.find(Utente.class, numeroTessera);
+    }
 
     public List<Prestito> ricercaPrestitiUtente(Long numeroTessera) {
         return em.createQuery("SELECT p FROM Prestito p WHERE p.utente.numeroTessera = :numeroTessera", Prestito.class)

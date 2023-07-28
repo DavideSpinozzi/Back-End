@@ -26,6 +26,8 @@ public class Prenotazione {
 		this.postazione = postazione;
 		this.utente = utente;
 		this.dataPrenotazione = dataPrenotazione;
+		utente.getPrenotazioni().add(this);
+		postazione.getPrenotazioni().add(this);
 	}
     @Override
 	public String toString() {

@@ -1,5 +1,6 @@
 package davidespinozzi.S4ProgettoSettimanale.classi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -25,6 +26,7 @@ public class Utente {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.email = email;
+		this.prenotazioni = new ArrayList<>();
 	}
 	@Override
 	public String toString() {

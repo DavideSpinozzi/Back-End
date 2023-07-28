@@ -1,5 +1,6 @@
 package davidespinozzi.S4ProgettoSettimanale.classi;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -27,6 +28,7 @@ public class Postazione {
 		this.descrizione = descrizione;
 		this.tipo = tipo;
 		this.numeroMassimoOccupanti = numeroMassimoOccupanti;
+		this.prenotazioni = new ArrayList<>();
 	}
 	@Override
 	public String toString() {

@@ -14,7 +14,7 @@ public class Dispositivo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String tipo;
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private Stato stato;
 	@ManyToOne
 	private Utente utente;

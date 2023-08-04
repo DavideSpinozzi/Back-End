@@ -1,5 +1,5 @@
 package davidespinozzi.S5ProgettoSettimanale.devices;
 
 public enum Stato {
-	disponibile, assegnato, in_manutenzione, dismesso;
+	DISPONIBILE, ASSEGNATO, IN_MANUTENZIONE, DISMESSO;
 }

@@ -14,7 +14,9 @@ public interface UtenteService {
 
 	Utente findByIdAndUpdate(Long id, UtentePayload body) throws NotFoundException;
 
-	void findByIdAndDelete(Long id) throws NotFoundException;
+	void delete(Long id) throws NotFoundException;
 
 	Utente findByEmail(String email);
+
+	public Utente addDispositivoToUtente(Long utenteId, Long dispositivoId) throws NotFoundException;
 }

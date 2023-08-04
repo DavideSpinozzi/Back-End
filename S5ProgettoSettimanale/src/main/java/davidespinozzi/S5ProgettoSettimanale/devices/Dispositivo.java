@@ -1,5 +1,7 @@
 package davidespinozzi.S5ProgettoSettimanale.devices;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import davidespinozzi.S5ProgettoSettimanale.users.Utente;
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,6 +19,7 @@ public class Dispositivo {
 	@Enumerated(EnumType.STRING)
 	private Stato stato;
 	@ManyToOne
+	@JsonIgnore
 	private Utente utente;
 
 	public Dispositivo(String tipo, Stato stato) {

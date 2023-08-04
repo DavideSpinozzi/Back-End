@@ -84,11 +84,11 @@ public class UtenteServiceImpl implements UtenteService {
 			throw new BadRequestException(
 					"Il dispositivo deve essere in stato 'DISPONIBILE' per poter essere aggiunto a un utente.");
 		}
-
+		
+        dispositivo.setStato(Stato.ASSEGNATO);
 		utente.addDispositivo(dispositivo);
-		repo.save(utente);
-		dispositivo.setStato(Stato.ASSEGNATO);
 		repod.save(dispositivo);
+		repo.save(utente);
 		
 		return utente;
 	}
